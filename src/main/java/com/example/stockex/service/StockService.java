@@ -29,4 +29,9 @@ public class StockService {
 
         stockRepository.saveAndFlush(stock);
     }
+    // synchronized의 문제점 : 한 프로세스안에서만 보장이 된다.
+    //                      서버가 2대 이상일 경우 데이터 접근을 여러곳에서 할 수 있게 된다. 그래서 race condition이 발생하게 된다.
+    //                      -> 해결방안: mysql에서 지원해주는 방법을 사용해보자.
+
+
 }
